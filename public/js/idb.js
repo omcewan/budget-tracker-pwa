@@ -70,11 +70,12 @@ function uploadTransaction() {
           // open one more transaction
           const transaction = db.transaction(['new_transaction'], 'readwrite');
           // access the new_transaction object store
-          const transactionObjectStore = transaction.objectStore('new_transaction');
+          const transactionObjectStore =
+            transaction.objectStore('new_transaction');
           // clear all items in your store
           transactionObjectStore.clear();
 
-          alert('All saved pizza has been submitted!');
+          alert('All saved transactions has been submitted!');
         })
         .catch((err) => {
           console.log(err);
